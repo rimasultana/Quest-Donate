@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quest Build and Manipulate</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Daisy And Tailwind Css Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- sweetalert Link -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#B4F461",
+              secondary: "#111111B3",
+            },
+            fontFamily: {
+              lexend: ["Lexend", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-lexend">
+    <!-- <header class="sticky top-0 z-5 backdrop-blur-2xl"> -->
+    <!-- navBar start -->
+    <header>
+      <section class="bg-zinc-50">
+        <nav
+          class="w-11/12 mx-auto py-5 md:py-10 flex justify-between flex-row md:flex-row gap-4 items-center"
+        >
+          <div class=" items-center">
+            <a class="btn text-[10px] md:text-lg lg:text-xl bg-primary px-6"
+              >Blog</a
+            >
+          </div>
+          <div class=" flex gap-1 items-center">
+            <img class="lg:w-7 w-4 md:w-5" src="images/logo.png" alt="" />
+            <div
+              class="flex gap-1 font-semibold text-[10px] md:text-lg lg:text-xl"
+            >
+              <p>Donate</p>
+              <p>Bangladesh</p>
+            </div>
+          </div>
+          <div class=" mt-4 md:mt-0 flex gap-0 items-center border-2 border-primary p-2 rounded-lg">
+            <img class="w-4 lg:w-8 md:w-6" src="images/coin.png" alt="" />
+            <a
+              class=" text-[10px] md:text-lg lg:text-xl text-gray-400"
+              ><span id="amount">5500</span> BDT</a
+            >
+          </div>
+        </nav>
+      </section>
+
+      <!-- navBar End -->
+      <!-- Button Start -->
+      <section class="shadow py-1">
+        <div
+          class="flex flex-row items-center justify-center gap-5 mt-3 md:mt-10 mb-10 text-xl font-medium"
+        >
+          <button class="btn bg-primary py-3 md:py-4 px-5 md:px-7">
+            Donation
+          </button>
+          <button
+            class="btn py-3 md:py-4 px-6 md:px-8 text-secondary border-2 border-gray-300 border-primary border-2"
+          >
+            History
+          </button>
+        </div>
+      </section>
+
+      <!-- Button End -->
+    </header>
+    <main>
+      <!-- Donate Banner part Start -->
+      <section class="w-11/12 mx-auto mt-10 mb-20">
+        <div class="space-y-6">
+          <!-- card-1 start -->
+          <div
+            class="flex flex-col lg:flex-row gap-10 border-2 border-gray-200 rounded-2xl p-4 md:p-8"
+          >
+            <div class="">
+              <img src="images/noakhali.png" alt="" class="w-full md:w-auto" />
+            </div>
+            <div class="flex-1">
+              <button class="btn border-2 border-primary">
+                <img src="images/coin.png" alt="" /><span id="oneInputAddMoney">0</span>BDT
+              </button>
+              <h2 class="text-xl font-bold mt-6">
+                Donate for Flood at Noakhali, Bangladesh
+              </h2>
+              <p class="text-secondary text-[16px] mt-6">
+                In the wake of devastating floods in Noakhali, Bangladesh,
+                countless families are in urgent need of assistance. The floods
+                have displaced thousands, leaving homes destroyed and
+                livelihoods shattered. We are launching a donation campaign to
+                provide immediate relief in the form of food, shelter, and
+                medical aid to those affected.
+              </p>
+
+              <input id="oneInputAmount"
+                type="text"
+                placeholder="Write Donation Amount"
+                class="input w-full border-2 border-gray-200 mt-8 px-5 md:px-14 border-2 border-primary"
+              />
+              <button id="cardOne" class="btn w-full bg-primary text-lg font-semibold mt-8 hover:bg-primary">
+                Donate Now
+              </button>
+            </div>
+          </div>
+          <!-- card-1 End -->
+
+          <!-- card-2 Start -->
+          <div
+            class="flex flex-col lg:flex-row gap-10 border-2 border-gray-200 rounded-2xl p-4 md:p-8"
+          >
+            <div class="">
+              <img src="images/feni.png" alt="" class="w-full md:w-auto" />
+            </div>
+            <div class="flex-1">
+              <button class="btn border-2 border-primary">
+               <img src="images/coin.png" alt="" /><span id="TwoInputAddMoney">600</span>BDT
+              </button>
+              <h2 class="text-xl font-bold mt-6">
+                Donate for Flood Relief in Feni, Bangladesh
+              </h2>
+              <p class="text-secondary text-[16px] mt-6">
+                Here’s a revised paragraph for your donation campaign focused on
+                flood relief in Feni, Bangladesh: In light of the recent floods
+                in Feni, Bangladesh, many families are facing dire circumstances
+                as they grapple with loss and displacement. The floods have
+                devastated homes, disrupted livelihoods, and left communities in
+                urgent need of support. We are launching a donation campaign
+                aimed at providing essential relief, including food, clean
+                water, shelter, and medical assistance to those affected. Your
+                generous contributions will directly impact the lives of those
+                in need, helping them recover and rebuild during this
+                challenging time.
+              </p>
+
+              <input id="TwoInputAmount"
+                type="number"
+                placeholder="Write Donation Amount"
+                class="input w-full border-2 border-gray-200 mt-8 px-5 md:px-14 border-2 border-primary"
+              />
+              <button id="cardTwo" class="btn w-full bg-primary text-lg font-semibold mt-8 hover:bg-primary">
+                Donate Now
+              </button>
+            </div>
+          </div>
+          <!-- card-2 End -->
+
+          <!-- card-3 Start -->
+          <div
+            class="flex flex-col lg:flex-row gap-10 border-2 border-gray-200 rounded-2xl p-4 md:p-8"
+          >
+            <div class="">
+              <img
+                src="images/quota-protest.png"
+                alt=""
+                class="w-full md:w-auto"
+              />
+            </div>
+            <div class="flex-1">
+              <button class="btn border-2 border-primary">
+                <img src="images/coin.png" alt="" /><span id="ThreeInputAddMoney">2400</span>BDT
+              </button>
+              <h2 class="text-xl font-bold mt-6">
+                Aid for Injured in the Quota Movement
+              </h2>
+              <p class="text-secondary text-[16px] mt-6">
+                Here’s a paragraph for your campaign focused on aiding the
+                injured from the Quota Movement: In the aftermath of the Quota
+                Movement, many individuals have suffered injuries while
+                advocating for their rights and a fair representation in
+                education and employment. These brave protesters have put their
+                lives on the line, and now they need our help. We are initiating
+                a fundraising campaign to provide medical aid, rehabilitation,
+                and support to those injured during the movement.. Every
+                contribution, regardless of size, can make a significant impact
+                on their healing journey.
+              </p>
+
+              <input id="ThreeInputAmount"
+                type="number"
+                placeholder="Write Donation Amount"
+                class="input w-full border-2 border-gray-300 mt-8 px-5 md:px-14 border-2 border-primary"
+              />
+              <button id="cardThree" class="btn w-full bg-primary text-lg font-semibold mt-8">
+                Donate Now
+              </button>
+            </div>
+          </div>
+          <!-- card-3 End -->
+        </div>
+      </section>
+      <!-- Donate Banner part End -->
+    </main>
+    <footer class="bg-zinc-100 w-full h-32"></footer>
+<script src="js/index.js"></script>
+  </body>
+</html>
