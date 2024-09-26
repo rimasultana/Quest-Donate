@@ -42,28 +42,29 @@
     <!-- <header class="sticky top-0 z-5 backdrop-blur-2xl"> -->
     <!-- navBar start -->
     <header>
-      <section class="bg-zinc-50">
+      <section class="bg-lime-100 shadow-sm">
         <nav
           class="w-11/12 mx-auto py-5 md:py-10 flex justify-between flex-row md:flex-row gap-4 items-center"
         >
-          <div class=" items-center">
-            <a class="btn text-[10px] md:text-lg lg:text-xl bg-primary px-6"
+          <div class="">
+            <a
+              class="btn text-[10px] md:text-lg lg:text-xl bg-primary px-6 border-2 border-white"
               >Blog</a
             >
           </div>
-          <div class=" flex gap-1 items-center">
+          <div class="flex gap-1 items-center">
             <img class="lg:w-7 w-4 md:w-5" src="images/logo.png" alt="" />
             <div
-              class="flex gap-1 font-semibold text-[10px] md:text-lg lg:text-xl"
+              class="flex gap-1 font-semibold text-[10px] md:text-lg pt-5 lg:text-xl"
             >
-              <p>Donate</p>
-              <p>Bangladesh</p>
+              <p>Donate Bangladesh</p>
             </div>
           </div>
-          <div class=" mt-4 md:mt-0 flex gap-0 items-center border-2 border-primary p-2 rounded-lg">
+          <div
+            class="mt-4 md:mt-0 flex gap-0 items-center border-2 border-lime-400 p-2 rounded-lg shadow bg-white"
+          >
             <img class="w-4 lg:w-8 md:w-6" src="images/coin.png" alt="" />
-            <a
-              class=" text-[10px] md:text-lg lg:text-xl text-gray-400"
+            <a class="text-[10px] md:text-lg lg:text-xl text-gray-400"
               ><span id="amount">5500</span> BDT</a
             >
           </div>
@@ -76,20 +77,24 @@
         <div
           class="flex flex-row items-center justify-center gap-5 mt-3 md:mt-10 mb-10 text-xl font-medium"
         >
-          <button class="btn bg-primary py-3 md:py-4 px-5 md:px-7">
+          <button
+            id="btn-donation"
+            class="btn py-3 md:py-4 px-5 md:px-7 hover:bg-primary bg-primary"
+          >
             Donation
           </button>
           <button
-            class="btn py-3 md:py-4 px-6 md:px-8 text-secondary border-2 border-gray-300 border-primary border-2"
+            id="btn-history"
+            class="btn py-3 md:py-4 px-6 md:px-8 text-secondary border-2 border-primary"
           >
             History
           </button>
         </div>
       </section>
-
+      <!-- new section -->
       <!-- Button End -->
     </header>
-    <main>
+    <main id="card">
       <!-- Donate Banner part Start -->
       <section class="w-11/12 mx-auto mt-10 mb-20">
         <div class="space-y-6">
@@ -102,9 +107,11 @@
             </div>
             <div class="flex-1">
               <button class="btn border-2 border-primary">
-                <img src="images/coin.png" alt="" /><span id="oneInputAddMoney">0</span>BDT
+                <img src="images/coin.png" alt="" /><span id="oneInputAddMoney"
+                  >0</span
+                >BDT
               </button>
-              <h2 class="text-xl font-bold mt-6">
+              <h2 id="cardOneTitle" class="text-xl font-bold mt-6">
                 Donate for Flood at Noakhali, Bangladesh
               </h2>
               <p class="text-secondary text-[16px] mt-6">
@@ -116,12 +123,16 @@
                 medical aid to those affected.
               </p>
 
-              <input id="oneInputAmount"
+              <input
+                id="oneInputAmount"
                 type="text"
                 placeholder="Write Donation Amount"
                 class="input w-full border-2 border-gray-200 mt-8 px-5 md:px-14 border-2 border-primary"
               />
-              <button id="cardOne" class="btn w-full bg-primary text-lg font-semibold mt-8 hover:bg-primary">
+              <button
+                id="cardOne"
+                class="btn w-full bg-primary text-lg font-semibold mt-8 hover:bg-primary"
+              >
                 Donate Now
               </button>
             </div>
@@ -137,7 +148,9 @@
             </div>
             <div class="flex-1">
               <button class="btn border-2 border-primary">
-               <img src="images/coin.png" alt="" /><span id="TwoInputAddMoney">600</span>BDT
+                <img src="images/coin.png" alt="" /><span id="TwoInputAddMoney"
+                  >600</span
+                >BDT
               </button>
               <h2 class="text-xl font-bold mt-6">
                 Donate for Flood Relief in Feni, Bangladesh
@@ -156,12 +169,16 @@
                 challenging time.
               </p>
 
-              <input id="TwoInputAmount"
+              <input
+                id="TwoInputAmount"
                 type="number"
                 placeholder="Write Donation Amount"
                 class="input w-full border-2 border-gray-200 mt-8 px-5 md:px-14 border-2 border-primary"
               />
-              <button id="cardTwo" class="btn w-full bg-primary text-lg font-semibold mt-8 hover:bg-primary">
+              <button
+                id="cardTwo"
+                class="btn w-full bg-primary text-lg font-semibold mt-8 hover:bg-primary"
+              >
                 Donate Now
               </button>
             </div>
@@ -181,7 +198,10 @@
             </div>
             <div class="flex-1">
               <button class="btn border-2 border-primary">
-                <img src="images/coin.png" alt="" /><span id="ThreeInputAddMoney">2400</span>BDT
+                <img src="images/coin.png" alt="" /><span
+                  id="ThreeInputAddMoney"
+                  >2400</span
+                >BDT
               </button>
               <h2 class="text-xl font-bold mt-6">
                 Aid for Injured in the Quota Movement
@@ -199,12 +219,16 @@
                 on their healing journey.
               </p>
 
-              <input id="ThreeInputAmount"
+              <input
+                id="ThreeInputAmount"
                 type="number"
                 placeholder="Write Donation Amount"
                 class="input w-full border-2 border-gray-300 mt-8 px-5 md:px-14 border-2 border-primary"
               />
-              <button id="cardThree" class="btn w-full bg-primary text-lg font-semibold mt-8">
+              <button
+                id="cardThree"
+                class="btn w-full bg-primary text-lg font-semibold mt-8"
+              >
                 Donate Now
               </button>
             </div>
@@ -212,9 +236,12 @@
           <!-- card-3 End -->
         </div>
       </section>
+      <section class="w-11/12 mx-auto hidden" id="history-container"></section>
       <!-- Donate Banner part End -->
     </main>
-    <footer class="bg-zinc-100 w-full h-32"></footer>
-<script src="js/index.js"></script>
+    <footer
+      class="bg-gradient-to-t from-lime-100 shadow-xl to-lime-100 w-full h-32"
+    ></footer>
+    <script src="js/index.js"></script>
   </body>
 </html>
