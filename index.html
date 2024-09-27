@@ -47,7 +47,7 @@
           class="w-11/12 mx-auto py-5 md:py-10 flex justify-between flex-row md:flex-row gap-4 items-center"
         >
           <div class="">
-            <a
+            <a onclick="window.location.href ='blog.html'"
               class="btn text-[10px] md:text-lg lg:text-xl bg-primary px-6 border-2 border-white"
               >Blog</a
             >
@@ -94,9 +94,9 @@
       <!-- new section -->
       <!-- Button End -->
     </header>
-    <main id="card">
+    <main>
       <!-- Donate Banner part Start -->
-      <section class="w-11/12 mx-auto mt-10 mb-20">
+      <section id="card-section" class="w-11/12 mx-auto mt-10 mb-20">
         <div class="space-y-6">
           <!-- card-1 start -->
           <div
@@ -152,7 +152,7 @@
                   >600</span
                 >BDT
               </button>
-              <h2 class="text-xl font-bold mt-6">
+              <h2 id="TwoCardTitle" class="text-xl font-bold mt-6">
                 Donate for Flood Relief in Feni, Bangladesh
               </h2>
               <p class="text-secondary text-[16px] mt-6">
@@ -203,7 +203,7 @@
                   >2400</span
                 >BDT
               </button>
-              <h2 class="text-xl font-bold mt-6">
+              <h2 id="threeCardTitle" class="text-xl font-bold mt-6">
                 Aid for Injured in the Quota Movement
               </h2>
               <p class="text-secondary text-[16px] mt-6">
@@ -223,7 +223,7 @@
                 id="ThreeInputAmount"
                 type="number"
                 placeholder="Write Donation Amount"
-                class="input w-full border-2 border-gray-300 mt-8 px-5 md:px-14 border-2 border-primary"
+                class="input w-full mt-8 px-5 md:px-14 border-2 border-primary"
               />
               <button
                 id="cardThree"
@@ -236,7 +236,8 @@
           <!-- card-3 End -->
         </div>
       </section>
-      <section class="w-11/12 mx-auto hidden" id="history-container"></section>
+      <section class="m-5 hidden" id="history-container">
+      </section>
       <!-- Donate Banner part End -->
     </main>
     <footer

@@ -19,6 +19,18 @@ document.getElementById("cardOne").addEventListener("click", function () {
     const cartAmount = amount - oneInputAmount;
     document.getElementById("amount").innerText = cartAmount;
 
+    const title = document.getElementById("cardOneTitle").innerText;
+    const historyContainer = document.getElementById("history-container");
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <div class="border border-gray-300 px-4 rounded-md space-y-4 m-5 p-5">
+    <h1 class="text-3xl">${oneInputAmount} ${title}</h1>
+    <h1 class="text-2xl">Data:${new Date()}</h1>
+  </div>
+    
+    `;
+    historyContainer.appendChild(div);
+
     Swal.fire({
       title: "<strong>Congrats!</strong>",
       icon: "success",
@@ -27,22 +39,6 @@ document.getElementById("cardOne").addEventListener("click", function () {
   } else {
     alert("Invalid Money 🤦‍♀️ Please Try Again 🫡");
   }
-
-  // history
-  const historyItem = document.createElement("div");
-  historyItem.classList.add(
-    "p-5",
-    "w-4/5",
-    "mx-auto",
-    "border-2",
-    "border-primary"
-  );
-  historyItem.innerHTML = `
-  <p class= "text-3xl font-bold">${sum} Taka is Donated for famine-2024 at Feni, Bangladesh</p>
-  <p>Date: ${new Date()}</p>
-  `;
-  const historyContainer = document.getElementById("history-container");
-  historyContainer.appendChild(historyItem);
 });
 
 // card-2
@@ -65,6 +61,18 @@ document.getElementById("cardTwo").addEventListener("click", function () {
 
     const cartAmount = amount - TwoInputAmount;
     document.getElementById("amount").innerText = cartAmount;
+    
+    const title = document.getElementById("TwoCardTitle").innerText;
+    const historyContainer = document.getElementById("history-container");
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <div class="border border-gray-300 px-4 rounded-md space-y-4 m-5 p-5">
+    <h1 class="text-3xl">${TwoInputAmount} ${title}</h1>
+    <h1 class="text-2xl">Data:${new Date()}</h1>
+  </div>
+    
+    `;
+    historyContainer.appendChild(div);
 
     Swal.fire({
       title: "<strong>Congrats!</strong>",
@@ -97,14 +105,15 @@ document.getElementById("cardThree").addEventListener("click", function () {
 
     const cartAmount = amount - ThreeInputAmount;
     document.getElementById("amount").innerText = cartAmount;
-    const title = document.getElementById("cardOneTitle").innerText;
+  
+    const title = document.getElementById("threeCardTitle").innerText;
     const historyContainer = document.getElementById("history-container");
     const div = document.createElement("div");
     div.innerHTML = `
-    <div class="border border-gray-300 px-4 rounded-md">
-    <h1 class="text-3xl">100 Donate for Flood at Noakhali, Bangladesh</h1>
-    <h1 class="text-2xl">Data: bla bla bla</h1>
-  </div>;
+    <div class="border border-gray-300 px-4 rounded-md space-y-4 m-5 p-5">
+    <h1 class="text-3xl">${ThreeInputAmount} ${title}</h1>
+    <h1 class="text-2xl">Data:${new Date()}</h1>
+  </div>
     
     `;
     historyContainer.appendChild(div);
@@ -124,13 +133,20 @@ document.getElementById("cardThree").addEventListener("click", function () {
 const btnHistory = document.getElementById("btn-history");
 const btnDonation = document.getElementById("btn-donation");
 
-document.getElementById("btn-history").addEventListener("click", function () {
+btnHistory.addEventListener("click", function () {
   btnHistory.classList.add("bg-primary");
   btnDonation.classList.remove("bg-primary");
-  document.getElementById("card").classList.add("hidden");
+  document.getElementById('card-section').classList.add('hidden');
+  document.getElementById('history-container').classList.remove('hidden');
+
 });
 btnDonation.addEventListener("click", function () {
-  btnHistory.classList.add("hidden");
+  btnDonation.classList.add('bg-primary');
+  btnHistory.classList.remove('bg-primary');
+  document.getElementById('card-section').classList.remove('hidden');
+  document.getElementById('history-container').classList.add('hidden');
+
+
 });
 
 // Helper functions
