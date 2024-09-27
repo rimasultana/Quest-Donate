@@ -4,6 +4,12 @@ document.getElementById("cardOne").addEventListener("click", function () {
   const oneInputAmount = getInputValue("oneInputAmount");
   const amount = getInnerText("amount");
 
+  const input = document.getElementById('oneInputAmount').value;
+  const regex = /^[0-9]+$/;
+  if (!regex.test(input)) {
+    return alert("Please enter a valid numeric donation amount.");
+  }
+
   if (
     !isNaN(oneInputAddMoney) &&
     !isNaN(oneInputAmount) &&
@@ -46,10 +52,14 @@ document.getElementById("cardTwo").addEventListener("click", function () {
   const TwoInputAddMoney = getInnerText("TwoInputAddMoney");
   const TwoInputAmount = getInputValue("TwoInputAmount");
   const amount = getInnerText("amount");
+ 
+  const input = document.getElementById('TwoInputAmount').value;
+  const regex = /^[0-9]+$/;
+  if (!regex.test(input)) {
+    return alert("Please enter a valid numeric donation amount.");
+  }
 
   if (
-    !isNaN(TwoInputAddMoney) &&
-    !isNaN(TwoInputAmount) &&
     TwoInputAmount > 0
   ) {
     if (TwoInputAmount > amount) {
@@ -57,11 +67,11 @@ document.getElementById("cardTwo").addEventListener("click", function () {
     }
 
     const sum = TwoInputAddMoney + TwoInputAmount;
-    document.getElementById("oneInputAddMoney").innerText = sum;
+    document.getElementById("TwoInputAddMoney").innerText = sum;
 
     const cartAmount = amount - TwoInputAmount;
     document.getElementById("amount").innerText = cartAmount;
-    
+
     const title = document.getElementById("TwoCardTitle").innerText;
     const historyContainer = document.getElementById("history-container");
     const div = document.createElement("div");
@@ -91,6 +101,13 @@ document.getElementById("cardThree").addEventListener("click", function () {
   const ThreeInputAmount = getInputValue("ThreeInputAmount");
   const amount = getInnerText("amount");
 
+
+  const input = document.getElementById('ThreeInputAmount').value;
+  const regex = /^[0-9]+$/;
+  if (!regex.test(input)) {
+    return alert("Please enter a valid numeric donation amount.");
+  }
+
   if (
     !isNaN(ThreeInputAddMoney) &&
     !isNaN(ThreeInputAmount) &&
@@ -101,11 +118,11 @@ document.getElementById("cardThree").addEventListener("click", function () {
     }
 
     const sum = ThreeInputAddMoney + ThreeInputAmount;
-    document.getElementById("oneInputAddMoney").innerText = sum;
+    document.getElementById("ThreeInputAddMoney").innerText = sum;
 
     const cartAmount = amount - ThreeInputAmount;
     document.getElementById("amount").innerText = cartAmount;
-  
+
     const title = document.getElementById("threeCardTitle").innerText;
     const historyContainer = document.getElementById("history-container");
     const div = document.createElement("div");
@@ -136,17 +153,14 @@ const btnDonation = document.getElementById("btn-donation");
 btnHistory.addEventListener("click", function () {
   btnHistory.classList.add("bg-primary");
   btnDonation.classList.remove("bg-primary");
-  document.getElementById('card-section').classList.add('hidden');
-  document.getElementById('history-container').classList.remove('hidden');
-
+  document.getElementById("card-section").classList.add("hidden");
+  document.getElementById("history-container").classList.remove("hidden");
 });
 btnDonation.addEventListener("click", function () {
-  btnDonation.classList.add('bg-primary');
-  btnHistory.classList.remove('bg-primary');
-  document.getElementById('card-section').classList.remove('hidden');
-  document.getElementById('history-container').classList.add('hidden');
-
-
+  btnDonation.classList.add("bg-primary");
+  btnHistory.classList.remove("bg-primary");
+  document.getElementById("card-section").classList.remove("hidden");
+  document.getElementById("history-container").classList.add("hidden");
 });
 
 // Helper functions
